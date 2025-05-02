@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Information</title>
+</head>
+<body>
+    <form action="/" method="get">
+        <label>Search Name:</label>
+        <input type="text" name="name">
+        <label>Min Age:</label>
+        <input type="text" name="min_age">
+        <label>Max Age:</label>
+        <input type="text" name="max_age">
+        <button type="submit">Filter</button>
+    </form>
+    <br>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        {% for p1 in people %}
+        <tr>
+            <td> {{p1.id}} </td>
+            <td> {{p1.name}} </td>
+            <td> {{p1.age}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/add">Add New Person</a>
+</body>
+</html>
